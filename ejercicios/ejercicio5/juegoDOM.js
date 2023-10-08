@@ -57,6 +57,10 @@ class Juego {
         * agregar la carta al jugador
         * mostrar las puntuaciones
         */
+       let carta = this.baraja.sacarCarta()
+       jugador.agregarCarta(carta);
+
+       this.mostrarPuntuaciones(true);
     }
 
     mostrarOpciones(ended=false) {
@@ -99,6 +103,13 @@ class Juego {
         *           y mostrar el ganador
         *      si el jugador no se ha pasado de 21, jugar el turno del crupier
         */
+       if(this.jugador.plantado) {
+        this.mostrarOpciones()
+       }
+
+       if(this.jugador.mano.getValor() > 21) {
+        
+       }
         
     }
 
